@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First  Js Project</title>
+    <style>
+        .container{
+            width:50%;
+            margin:0 auto;
+            display: grid;
+            place-items: center;
+            border: 1px solid black;
+            border-radius:20px;
+        }
+        *{
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container ">
+        <div class="subcontainer">
+            <h1>Current time Is: <span id="time"></span></h1>
+        </div>
+    </div>
+</body>
+<script>
+    let a;
+    let date;
+    let time;
+    const options= { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    setInterval(() => {
+        a = new Date(); 
+        date = a.toLocaleDateString(undefined, options);
+        time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+        document.getElementById('time').innerHTML = time + " <br> <br> on " + date;
+    }, 1000);
+</script>
+</html>
